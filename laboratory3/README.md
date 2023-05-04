@@ -1,4 +1,4 @@
-# Regular Grammar
+# Lexer & Scanner
 ### Course: Formal Languages & Finite Automata
 ### Author: Telug Anatolie FAF-212
 ----
