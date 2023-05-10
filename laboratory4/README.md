@@ -6,7 +6,6 @@
 ## Theory of Infinite Automata
 
 An infinite automaton is a mathematical model used to study computations that involve an infinite sequence of symbols. Unlike finite automata, which can only process a fixed number of input symbols, infinite automata can process an infinite stream of input symbols. Infinite automata have important applications in areas such as computer science, logic, and linguistics.
-## Objectives
 &ensp;&ensp;&ensp; 
 
 
