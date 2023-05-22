@@ -19,6 +19,17 @@ An infinite automaton is a mathematical model used to study computations that in
     4. Also, another BONUS point would be given if the student will make the aforementioned function to accept any grammar, not only the one from the student's variant.
 ## Implementation
 &ensp;&ensp;&ensp; 
+1. Step 1: In this step, the code is adding a new start symbol to the grammar by appending a prime symbol (') to the existing start symbol. It ensures that the new start symbol is not already present in the set of nonterminal symbols (vn). The original start symbol is then replaced with the new start symbol.
+
+2. Step 2: This step deals with the removal of epsilon productions, which are productions that derive the empty string (""). The code iteratively removes epsilon productions from each production in the grammar until no epsilon productions are left. It uses a set called epsilon_productions to keep track of symbols that have epsilon productions. For each symbol in the grammar, it checks if it has an epsilon production and modifies the production by replacing the epsilon symbol with an empty string. The modified production is added back to the set of productions for that symbol.
+
+3. Step 3: Here, the code eliminates unit productions, which are productions of the form A -> B, where A and B are nonterminal symbols. It initializes a dictionary called unit_productions to store the unit productions for each nonterminal symbol. The code then iterates over each production in the grammar and checks if it is a unit production. If it is, the code removes the unit production and replaces it with the productions derived from the nonterminal symbol B. The process continues until there are no more unit productions left.
+
+4. Step 4: This step introduces new nonterminal symbols for productions with more than two symbols on the right-hand side. It iterates over each production in the grammar and if the length of the production is greater than 2, it creates a new nonterminal symbol by appending a prime symbol (') to the original symbol. It ensures that the new symbol is not already present in vn. The code then modifies the production by splitting it into two parts, where the last two symbols form a new production with the new symbol, and the rest of the production is concatenated with the new symbol.
+
+5. Step 5: In this step, the code eliminates all non-2-sized right-hand sides. It iterates over each production in the grammar and checks if the length of the production is 2. If it is, the production is kept as it is. Otherwise, the code creates new productions by pairing adjacent symbols in the original production and appending a prime symbol (') to the pair. These new productions replace the original production.
+
+Overall, this code implements the conversion of a context-free grammar to Chomsky normal form (CNF) by applying a series of transformations to the grammar. Each step addresses a specific aspect of the grammar and modifies it accordingly.
 ```
  def to_cnf(self):
         # Step 1: eliminate the start symbol from right-hand sides
