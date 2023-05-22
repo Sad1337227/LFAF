@@ -18,7 +18,6 @@ An infinite automaton is a mathematical model used to study computations that in
     3. A BONUS point will be given for the student who will have unit tests that validate the functionality of the project.
     4. Also, another BONUS point would be given if the student will make the aforementioned function to accept any grammar, not only the one from the student's variant.
 ## Implementation
-&ensp;&ensp;&ensp; 
 1. Step 1: In this step, the code is adding a new start symbol to the grammar by appending a prime symbol (') to the existing start symbol. It ensures that the new start symbol is not already present in the set of nonterminal symbols (vn). The original start symbol is then replaced with the new start symbol.
 
 2. Step 2: This step deals with the removal of epsilon productions, which are productions that derive the empty string (""). The code iteratively removes epsilon productions from each production in the grammar until no epsilon productions are left. It uses a set called epsilon_productions to keep track of symbols that have epsilon productions. For each symbol in the grammar, it checks if it has an epsilon production and modifies the production by replacing the epsilon symbol with an empty string. The modified production is added back to the set of productions for that symbol.
